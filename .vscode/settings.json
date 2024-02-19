@@ -1,0 +1,16 @@
+{
+  "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.ruff": "explicit",
+        "source.organizeImports.ruff": "explicit"
+      },
+      "editor.formatOnType": true
+  },
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120,
+  "editor.tabSize": 4,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+}

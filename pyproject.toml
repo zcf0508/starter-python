@@ -1,0 +1,50 @@
+[project]
+name = "starter-python"
+version = "0.1.0"
+description = "_description_"
+authors = [
+    { name = "zcf0508", email = "zcf0508@live.com" }
+]
+dependencies = [
+    "setuptools>=68.2.2",
+    "python-dotenv>=1.0.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+hello = "starter_python:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.0.292",
+    "black>=23.9.1",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/starter_python"]
+
+[tool.mypy]
+files = ["src/starter_python"]
+python_version = "3.12"
+
+# https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+# https://beta.ruff.rs/docs/rules/
+ignore = ["F401", "E402"]
+select = ["E", "W", "F"]
+# Exclude a variety of commonly ignored directories.
+ignore-init-module-imports = true
+respect-gitignore = true
