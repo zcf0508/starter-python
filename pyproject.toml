@@ -6,8 +6,8 @@ authors = [
     { name = "zcf0508", email = "zcf0508@live.com" }
 ]
 dependencies = [
-    "setuptools>=69.1.0",
     "python-dotenv>=1.0.1",
+    "setuptools>=69.1.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
@@ -22,9 +22,10 @@ build-backend = "hatchling.build"
 [tool.rye]
 managed = true
 dev-dependencies = [
-    "mypy>=1.8.0",
-    "ruff>=0.2.2",
     "black>=24.2.0",
+    "mypy>=1.8.0",
+    "pytest>=7.4.0",
+    "ruff>=0.2.2",
 ]
 
 [tool.hatch.metadata]
@@ -32,6 +33,14 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/starter_python"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+    "integration",
+]
 
 [tool.mypy]
 files = ["src/starter_python"]
